@@ -171,7 +171,7 @@
             (let (
               (new-token-id (get items-minted collection-data))
               (new-items-minted (+ (get items-minted collection-data) u1))
-              (metadata-uri (concat (get base-uri collection-data) (to-string new-token-id)))
+              (metadata-uri (concat (get base-uri collection-data) (uint-to-ascii new-token-id)))
             )
               (if (> price u0)
                 (match (stx-transfer? price caller (get designer collection-data))
